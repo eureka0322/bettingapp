@@ -6,12 +6,12 @@ const getTotalGames = async () => {
   try {
     const currentDate = new Date();
     // Set the time to the start of the current day
-    currentDate.setHours(-4, 0, 0, 0);
-//    currentDate.setHours(0, 0, 0, 0);
+//    currentDate.setHours(-4, 0, 0, 0);
+    currentDate.setHours(0, 0, 0, 0);
     // Set the time to the end of the current day
     const endDate = new Date(currentDate);
-//    endDate.setHours(23, 59, 59, 999);
-    endDate.setHours(43, 59, 59, 999);
+    endDate.setHours(23, 59, 59, 999);
+//    endDate.setHours(43, 59, 59, 999);
     // Define the query
     const query = {
       game_datetime: {
@@ -31,12 +31,12 @@ const getBetevoSpread = async (req, res) => {
   try {
     const currentDate = new Date();
     // Set the time to the start of the current day
-    currentDate.setHours(-4, 0, 0, 0);
-//    currentDate.setHours(0, 0, 0, 0);
+//    currentDate.setHours(-4, 0, 0, 0);
+    currentDate.setHours(0, 0, 0, 0);
     // Set the time to the end of the current day
     const endDate = new Date(currentDate);
-//    endDate.setHours(23, 59, 59, 999);
-    endDate.setHours(43, 59, 59, 999);
+    endDate.setHours(23, 59, 59, 999);
+//    endDate.setHours(43, 59, 59, 999);
     // Define the query
     const query = {
       game_datetime: {
@@ -115,11 +115,11 @@ const getBetevoMoneyLine = async (req, res) => {
   try {
     const currentDate = new Date();
     // Set the time to the start of the current day
-    currentDate.setHours(-4, 0, 0, 0);
-//    currentDate.setHours(0, 0, 0, 0);
+//    currentDate.setHours(-4, 0, 0, 0);
+    currentDate.setHours(0, 0, 0, 0);
     // Set the time to the end of the current day
-    const endDate = new Date(currentDate);
-//    endDate.setHours(23, 59, 59, 999);
+//    const endDate = new Date(currentDate);
+    endDate.setHours(23, 59, 59, 999);
     endDate.setHours(43, 59, 59, 999);
     // Define the query
     const query = {
@@ -182,12 +182,12 @@ const getBetevoTotal = async (req, res) => {
   try {
     const currentDate = new Date();
     // Set the time to the start of the current day
-    currentDate.setHours(-4, 0, 0, 0);
-//    currentDate.setHours(0, 0, 0, 0);
+//    currentDate.setHours(-4, 0, 0, 0);
+    currentDate.setHours(0, 0, 0, 0);
     // Set the time to the end of the current day
     const endDate = new Date(currentDate);
-//    endDate.setHours(23, 59, 59, 999);
-    endDate.setHours(43, 59, 59, 999);
+    endDate.setHours(23, 59, 59, 999);
+//    endDate.setHours(43, 59, 59, 999);
     // Define the query
     const query = {
       game_datetime: {

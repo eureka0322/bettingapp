@@ -118,9 +118,9 @@ const getBetevoMoneyLine = async (req, res) => {
 //    currentDate.setHours(-4, 0, 0, 0);
     currentDate.setHours(0, 0, 0, 0);
     // Set the time to the end of the current day
-//    const endDate = new Date(currentDate);
+    const endDate = new Date(currentDate);
     endDate.setHours(23, 59, 59, 999);
-    endDate.setHours(43, 59, 59, 999);
+//    endDate.setHours(43, 59, 59, 999);
     // Define the query
     const query = {
       game_datetime: {

@@ -68,7 +68,9 @@ const getBetevoSpread = async (req, res) => {
         sport_visitor_spread_odd: "N /",
         sport_visitor_spread_stand: "A",
         sport_home_spread_odd: "N /",
-        sport_home_spread_stand: "A"
+        sport_home_spread_stand: "A",
+        startDate: currentDate,
+        endDate: endDate
       });
     })
 
@@ -96,7 +98,9 @@ const getBetevoSpread = async (req, res) => {
           sport_visitor_spread_odd: item.visitor_spread_odd,
           sport_visitor_spread_stand: item.visitor_spread_stand,
           sport_home_spread_odd: item.home_spread_odd,
-          sport_home_spread_stand: item.home_spread_stand
+          sport_home_spread_stand: item.home_spread_stand,
+          startDate: currentDate,
+          endDate: endDate
         });
       }
     });

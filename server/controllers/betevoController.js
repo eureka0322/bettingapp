@@ -5,7 +5,16 @@ const sports = require("../models/sportModel");
 const getTotalGames = async (req, res) => {
   try {
     const currentDate = new Date();
-    res.json({currentDate});
+    // Set the time to the start of the current day
+    currentDate.setHours(-4, 0, 0, 0);
+    
+    const startDate = new Date(currentDate);
+    startDate.setHours(0, 0, 0, 0);
+    // Set the time to the end of the current day
+    const endDate = new Date(currentDate);
+    endDate.setHours(23, 59, 59, 999);
+
+    res.json({startDate, endDate});
   } catch (error) {
     res.status(400).json({ error: "error.message" });
   }

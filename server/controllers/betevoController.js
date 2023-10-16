@@ -5,6 +5,7 @@ const sports = require("../models/sportModel");
 const getTotalGames = async () => {
   try {
     const currentDate = new Date();
+    res.json({currentDate});
     // Set the time to the start of the current day
 //    currentDate.setHours(-4, 0, 0, 0);
     currentDate.setHours(0, 0, 0, 0);
@@ -13,15 +14,6 @@ const getTotalGames = async () => {
     endDate.setHours(23, 59, 59, 999);
 //    endDate.setHours(43, 59, 59, 999);
     // Define the query
-    const query = {
-      game_datetime: {
-        $gte: currentDate,
-        $lt: endDate,
-      },
-    };
-    const list = await betevos.distinct("visitor_team home_team", query);
-    console.log(list)
-
   } catch (error) {
     res.status(400).json({ error: "error.message" });
   }
@@ -37,7 +29,6 @@ const getBetevoSpread = async (req, res) => {
     const endDate = new Date(currentDate);
     endDate.setHours(23, 59, 59, 999);
 //    endDate.setHours(43, 59, 59, 999);
-    res.json({currentDate, endDate});
     // Define the query
     const query = {
       game_datetime: {

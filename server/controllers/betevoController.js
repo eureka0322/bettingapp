@@ -10,10 +10,10 @@ const getTotalGames = async (req, res) => {
     realDate.setHours(currentDate.getHours()-4,0,0,0);
     
     const startDate = new Date(realDate);
-    startDate.setHours(-4, 0, 0, 0);
+    startDate.setHours(0, 0, 0, 0);
     // Set the time to the end of the current day
     const endDate = new Date(realDate);
-    endDate.setHours(19, 59, 59, 999);
+    endDate.setHours(23, 59, 59, 999);
 
     res.json({startDate, endDate, currentDate, realDate});
   } catch (error) {
@@ -29,10 +29,10 @@ const getBetevoSpread = async (req, res) => {
     realDate.setHours(currentDate.getHours()-4,0,0,0);
     
     const startDate = new Date(realDate);
-    startDate.setHours(-4, 0, 0, 0);
+    startDate.setHours(0, 0, 0, 0);
     // Set the time to the end of the current day
     const endDate = new Date(realDate);
-    endDate.setHours(19, 59, 59, 999);
+    endDate.setHours(23, 59, 59, 999);
     // Define the query
     const query = {
       game_datetime: {
@@ -116,10 +116,10 @@ const getBetevoMoneyLine = async (req, res) => {
     realDate.setHours(currentDate.getHours()-4,0,0,0);
     
     const startDate = new Date(realDate);
-    startDate.setHours(-4, 0, 0, 0);
+    startDate.setHours(0, 0, 0, 0);
     // Set the time to the end of the current day
     const endDate = new Date(realDate);
-    endDate.setHours(19, 59, 59, 999);
+    endDate.setHours(23, 59, 59, 999);
     // Define the query
     const query = {
       game_datetime: {
@@ -185,10 +185,10 @@ const getBetevoTotal = async (req, res) => {
     realDate.setHours(currentDate.getHours()-4,0,0,0);
     
     const startDate = new Date(realDate);
-    startDate.setHours(-4, 0, 0, 0);
+    startDate.setHours(0, 0, 0, 0);
     // Set the time to the end of the current day
     const endDate = new Date(realDate);
-    endDate.setHours(19, 59, 59, 999);
+    endDate.setHours(23, 59, 59, 999);
     // Define the query
     const query = {
       game_datetime: {

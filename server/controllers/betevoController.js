@@ -7,16 +7,13 @@ const getTotalGames = async (req, res) => {
     const currentDate = new Date();
     // Set the time to the start of the current day
     const realDate = new Date(currentDate); 
-    console.log(currentDate);
-    console.log(currentDate.getHours(), currentDate.getMinutes());
-    realDate = setHours(currentDate.getHours()-4,0,0,0);
-    console.log(realDate);
+    realDate.setHours(currentDate.getHours()-4,0,0,0);
     
     const startDate = new Date(realDate);
-    startDate.setHours(0, 0, 0, 0);
+    startDate.setHours(-4, 0, 0, 0);
     // Set the time to the end of the current day
     const endDate = new Date(realDate);
-    endDate.setHours(23, 59, 59, 999);
+    endDate.setHours(19, 59, 59, 999);
 
     res.json({startDate, endDate, currentDate, realDate});
   } catch (error) {
@@ -28,16 +25,18 @@ const getBetevoSpread = async (req, res) => {
   try {
     const currentDate = new Date();
     // Set the time to the start of the current day
-//    currentDate.setHours(-4, 0, 0, 0);
-    currentDate.setHours(0, 0, 0, 0);
+    const realDate = new Date(currentDate); 
+    realDate.setHours(currentDate.getHours()-4,0,0,0);
+    
+    const startDate = new Date(realDate);
+    startDate.setHours(-4, 0, 0, 0);
     // Set the time to the end of the current day
-    const endDate = new Date(currentDate);
-    endDate.setHours(23, 59, 59, 999);
-//    endDate.setHours(43, 59, 59, 999);
+    const endDate = new Date(realDate);
+    endDate.setHours(19, 59, 59, 999);
     // Define the query
     const query = {
       game_datetime: {
-        $gte: currentDate,
+        $gte: startDate,
         $lt: endDate,
       },
       home_spread_odd: {
@@ -113,16 +112,18 @@ const getBetevoMoneyLine = async (req, res) => {
   try {
     const currentDate = new Date();
     // Set the time to the start of the current day
-//    currentDate.setHours(-4, 0, 0, 0);
-    currentDate.setHours(0, 0, 0, 0);
+    const realDate = new Date(currentDate); 
+    realDate.setHours(currentDate.getHours()-4,0,0,0);
+    
+    const startDate = new Date(realDate);
+    startDate.setHours(-4, 0, 0, 0);
     // Set the time to the end of the current day
-    const endDate = new Date(currentDate);
-    endDate.setHours(23, 59, 59, 999);
-//    endDate.setHours(43, 59, 59, 999);
+    const endDate = new Date(realDate);
+    endDate.setHours(19, 59, 59, 999);
     // Define the query
     const query = {
       game_datetime: {
-        $gte: currentDate,
+        $gte: startDate,
         $lt: endDate,
       },
       home_money_line_info: {
@@ -180,16 +181,18 @@ const getBetevoTotal = async (req, res) => {
   try {
     const currentDate = new Date();
     // Set the time to the start of the current day
-//    currentDate.setHours(-4, 0, 0, 0);
-    currentDate.setHours(0, 0, 0, 0);
+    const realDate = new Date(currentDate); 
+    realDate.setHours(currentDate.getHours()-4,0,0,0);
+    
+    const startDate = new Date(realDate);
+    startDate.setHours(-4, 0, 0, 0);
     // Set the time to the end of the current day
-    const endDate = new Date(currentDate);
-    endDate.setHours(23, 59, 59, 999);
-//    endDate.setHours(43, 59, 59, 999);
+    const endDate = new Date(realDate);
+    endDate.setHours(19, 59, 59, 999);
     // Define the query
     const query = {
       game_datetime: {
-        $gte: currentDate,
+        $gte: startDate,
         $lt: endDate,
       },
       home_total_odd: {

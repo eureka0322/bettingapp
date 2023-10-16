@@ -50,6 +50,8 @@ const getBetevoSpread = async (req, res) => {
         $ne: ""
       },
     };
+
+    res.json({currentDate, endDate});
     const betevo = await betevos.find(query).select({_id: 1, visitor_team: 1, home_team: 1, visitor_spread_odd: 1, visitor_spread_stand: 1, home_spread_odd: 1, home_spread_stand: 1});
     const sport = await sports.find(query).select({_id: 1, visitor_team: 1, home_team: 1, visitor_spread_odd: 1, visitor_spread_stand: 1, home_spread_odd: 1, home_spread_stand: 1});
     

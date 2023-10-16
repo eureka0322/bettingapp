@@ -6,7 +6,8 @@ const getTotalGames = async (req, res) => {
   try {
     const currentDate = new Date();
     // Set the time to the start of the current day
-    currentDate.setHours(-4, 0, 0, 0);
+    const realDate = new Date(currentDate); 
+    realDate.setHours(-4, 0, 0, 0);
     
     const startDate = new Date(currentDate);
     startDate.setHours(0, 0, 0, 0);
@@ -14,7 +15,7 @@ const getTotalGames = async (req, res) => {
     const endDate = new Date(currentDate);
     endDate.setHours(23, 59, 59, 999);
 
-    res.json({startDate, endDate, currentDate});
+    res.json({startDate, endDate, currentDate, realDate});
   } catch (error) {
     res.status(400).json({ error: "error.message" });
   }

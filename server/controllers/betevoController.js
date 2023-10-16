@@ -30,6 +30,7 @@ const getTotalGames = async () => {
 const getBetevoSpread = async (req, res) => {
   try {
     const currentDate = new Date();
+    res.json({currentDate});
     // Set the time to the start of the current day
 //    currentDate.setHours(-4, 0, 0, 0);
     currentDate.setHours(0, 0, 0, 0);
@@ -51,7 +52,6 @@ const getBetevoSpread = async (req, res) => {
       },
     };
 
-    res.json({currentDate, endDate});
     const betevo = await betevos.find(query).select({_id: 1, visitor_team: 1, home_team: 1, visitor_spread_odd: 1, visitor_spread_stand: 1, home_spread_odd: 1, home_spread_stand: 1});
     const sport = await sports.find(query).select({_id: 1, visitor_team: 1, home_team: 1, visitor_spread_odd: 1, visitor_spread_stand: 1, home_spread_odd: 1, home_spread_stand: 1});
     

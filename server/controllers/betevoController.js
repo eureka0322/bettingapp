@@ -7,7 +7,10 @@ const getTotalGames = async (req, res) => {
     const currentDate = new Date();
     // Set the time to the start of the current day
     const realDate = new Date(currentDate); 
-    realDate = setHours(currentDate.getHours()-4,0,0);
+    console.log(currentDate);
+    console.log(currentDate.getHours(), currentDate.getMinutes());
+    realDate = setHours(currentDate.getHours()-4,0,0,0);
+    console.log(realDate);
     
     const startDate = new Date(realDate);
     startDate.setHours(0, 0, 0, 0);
